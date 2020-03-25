@@ -1,20 +1,24 @@
 <?php
 
 session_start();
+$message = 'Connecté';
 
 $obj = new stdClass();
 $obj->success = false;
-$obj->message = 'Nom d\'utilisateur ou mot de passe incorrect';
+$username = $_POST['username'];
+$password = $_POST['password'];
 
-// PHP a rempli $_POST[username] et $_POST[password]
+echo 'Ton username est : ' .htmlspecialchars($username) . "\n" . 'Ton password est : ' . $password . "\n";
 
-$found = true; // simule user/pass trouvés en base
-if ($found) {
+if ($username == 'admin' && $password == 'admin'){
     $obj->success = true;
     $_SESSION['user'] = 123;
+    echo 'Bonne combinaison MDP / USNM';
+} else {
+    echo 'Mauvaise combinaison MDP/USNM';
 }
+
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
 header('Content-type: application/json');
 
-echo json_encode($obj);

@@ -9,7 +9,7 @@
                 data: $(this).serialize()
             }).done(function (data) {
                 if (data.success === true) {
-                    window.location.href = '../html/index.html';
+                    window.location.href = 'index.html';
                 } else {
                     $('#messages').html(data.message).fadeIn();
                 }
