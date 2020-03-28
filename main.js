@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    $(()=> {
+    $(() => {
         $.ajax({
             url: 'php/is_connected.php',
             method: 'get'
@@ -9,7 +9,7 @@
                 $('body').append(
                     $('<button />')
                         .html('Déconnexion')
-                        .on ('click', function () {
+                        .on('click', function () {
                             $.ajax({
                                 url: 'php/logout.php',
                                 method: 'get'
@@ -25,4 +25,4 @@
             $('body').html('Une erreur critique est arrivée.')
         })
     })
-}) ();
+})();

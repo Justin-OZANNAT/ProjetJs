@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <link href="/css/style.css" rel="stylesheet">
-    <script src="/js/main.js"></script>
-    <script src="/js/jquery-3.4.1.min.js"></script>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
-    <form id="form-login" action="/php/login.php" method="post">
-        <input type="text" name="username" placeholder="username">
-        <br>
-        <input type="password" name="password" placeholder="password">
-        <br>
-        <input type="submit" value="ok">
-    </form>
-    <div id="messages" style="display: none;">test</div>
-    <a href="index.html">accueil</a>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="/css/style.css" rel="stylesheet">
+        <script src="main.js"></script>
+        <script src="jquery-3.4.1.min.js"></script>
+        <meta charset="UTF-8">
+        <title>CocktailMaker</title>
+    </head>
+    <body>
+        <ul class="topnav">
+            <li><a  href="index.html">Accueil</a></li>
+            <li><a class="active" href="login.html">Login</a></li>
+            <li class="right"><a href="#about">Contact</a></li>
+        </ul>
+        <div class="container align-self-center">
 
-</body>
+            <div class="row align-items-center justify-content-end">
+
+                <div class="col-4 align-self-center justify-content-center" id="divform">
+                    <h1 class="text-center  mt-4" id="titre"> <a class="text-decoration-none text-info font-weight-bold" href="login.html"> Connexion  </a> </h1>
+                    <form id="form-login" method="post" action="json/login.php">
+                        <input type="text" name="username" class="form-control mt-5" placeholder="Username"/><br>
+                        <input type="password" name="password" class="form-control mt-2" placeholder="Password"/><br>
+                        <h6 class="mt-1 text-center text-white"> Connectez-vous ou inscrivez-vous en cliquant <a class="font-weight-bolder text-info" id="inscription"> ici</a> ! </h6>
+                        <h6 class="mt-1 text-center text-white" id="message"> </h6>
+                        <button class="btn btn-info mt-3" type="submit" id="submit">Envoyer</button>
+                    </form>
+                    <form id="form-inscr" method="post" action="json/inscription.php" style="display:none">
+                        <input type="text" name="username" class="form-control mt-5" placeholder="Username"/><br>
+                        <input type="password" name="password" class="form-control mt-2" placeholder="Password"/><br>
+                        <input type="email" name="email" class="form-control mt-2" placeholder="exemple@exemple.fr"/>
+                        <h6 class="mt-1 text-center text-white"> Inscrivez-vous ! </h6>
+                        <h6 class="mt-1 text-center text-white" id="message2"> </h6>
+                        <button class="btn btn-info mt-3" type="submit">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

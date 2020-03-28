@@ -1,21 +1,63 @@
-body{
-    background-color: black;
-    color: white;
+body {
+    background: black;
+    background-image: url("../cocktail.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    font-family: "Arial";
+
 }
 
-h1{
+
+
+.cocktails{
+    margin-top : 10%;
+}
+
+#monaco{
+    background-color: #333333;
+    border-radius: 15%;
+    padding: 15px 15px;
+    margin: 15px 15px;
+}
+
+#boisson2{
+    border-radius: 15%;
+    margin: 15px 15px;
+    background-color: #333333;
+    padding: 15px 15px;
+}
+
+
+#boisson3{
+    border-radius: 15%;
+    background-color: #333333;
+    margin: 15px 15px;
+    padding: 15px 15px;
+}
+
+#boisson4{
+    border-radius: 15%;
+    background-color: #333333;
+    margin: 15px 15px;
+    padding: 15px 15px;
+}
+
+h1 {
     text-align: center;
+    padding-top: 2%;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
 }
 
-.login{
-    text-align: center;}
+.login {
+    text-align: center;
+}
 
-.cocktails{
+.cocktails {
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 10px;
@@ -24,3 +66,32 @@ a{
     justify-content: space-evenly;
 }
 
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: cornflowerblue;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+    ul.topnav li.right,
+    ul.topnav li {float: none;}
+}
