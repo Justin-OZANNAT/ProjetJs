@@ -2,7 +2,7 @@
     'use strict';
     $(() => {
         $.ajax({
-            url: 'php/is_connected.php',
+            url: 'json/is_connected.php',
             method: 'get'
         }).done(function (data) {
             if (data.success) {
@@ -11,7 +11,7 @@
                         .html('Déconnexion')
                         .on('click', function () {
                             $.ajax({
-                                url: 'php/logout.php',
+                                url: 'json/logout.php',
                                 method: 'get'
                             }).done(function () {
                                 window.location.href = 'login.html';

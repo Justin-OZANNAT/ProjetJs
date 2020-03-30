@@ -17,10 +17,10 @@ try {
     // En cas d'erreur, on affiche un message et on arrête tout
     die('Erreur : ' . $e->getMessage());
 }
-$requete = $bdd->query('SELECT * FROM login(username, password) ');
+$requete = $bdd->query('SELECT * FROM login');
 while ($donnees = $requete->fetch())
 {
-    echo $donnees['nom'] . "\n";       //fetching data and echoing them one by one
+    echo $donnees['username'] . "\n";       //fetching data and echoing them one by one
 }
 
 $requete->closeCursor();

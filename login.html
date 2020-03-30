@@ -6,6 +6,7 @@
         <script src="main.js"></script>
         <script src="jquery-3.4.1.min.js"></script>
         <meta charset="UTF-8">
+        <link rel="icon" href="S.png" type="image/x-icon">
         <title>CocktailMaker</title>
     </head>
     <body>
@@ -20,14 +21,14 @@
 
                 <div class="col-4 align-self-center justify-content-center" id="divform">
                     <h1 class="text-center  mt-4" id="titre"> <a class="text-decoration-none text-info font-weight-bold" href="login.html"> Connexion  </a> </h1>
-                    <form id="form-login" method="post" action="json/login.php">
+                    <form id="form-login" action="json/login.php" method="post" >
                         <input type="text" name="username" class="form-control mt-5" placeholder="Username"/><br>
                         <input type="password" name="password" class="form-control mt-2" placeholder="Password"/><br>
                         <h6 class="mt-1 text-center text-white"> Connectez-vous ou inscrivez-vous en cliquant <a class="font-weight-bolder text-info" id="inscription"> ici</a> ! </h6>
                         <h6 class="mt-1 text-center text-white" id="message"> </h6>
                         <button class="btn btn-info mt-3" type="submit" id="submit">Envoyer</button>
                     </form>
-                    <form id="form-inscr" method="post" action="json/inscription.php" style="display:none">
+                    <form id="form-inscr" method="post" action="json/register.php" style="display:none">
                         <input type="text" name="username" class="form-control mt-5" placeholder="Username"/><br>
                         <input type="password" name="password" class="form-control mt-2" placeholder="Password"/><br>
                         <input type="email" name="email" class="form-control mt-2" placeholder="exemple@exemple.fr"/>
@@ -38,5 +39,6 @@
                 </div>
             </div>
         </div>
+        <div id="messages" style="display: none;" ></div>
     </body>
 </html>

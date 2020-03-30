@@ -1,49 +1,22 @@
 (function () {
     'use strict';
-    $(() => {
-        $('#form-login').submit(function () {
+    $(()=> {
+        $('#form-login').on('submit', function () {
+            $('#messages').fadeOut();
             $.ajax({
                 url: $(this).attr('action'),
                 method: $(this).attr('method'),
                 data: $(this).serialize()
             }).done(function (data) {
-                if (data.success) {
-                    window.location.href = '/index.html';
+                if (data.success === true) {
+                    window.location.href = 'index.html';
                 } else {
-                    $('#message').html(data.message);
+                    $('#messages').html(data.message).fadeIn();
                 }
             }).fail(function () {
-                $('body').html("Erreur critique");
-
+                $('body').html('Une erreur critique est arrivée.')
             });
             return false;
         })
     })
-})();
-
-(function () {
-    'use strict';
-    $(() => {
-        $('#register').click(function () {
-            $('#form-login').fadeOut("fast");
-            $('#form-reg').fadeIn("slow");
-        });
-        $('#form-reg').submit(function () {
-            $.ajax({
-                url: $(this).attr('action'),
-                method: $(this).attr('method'),
-                data: $(this).serialize()
-            }).done(function (data) {
-                if (data.success) {
-                    $('#form-reg').fadeOut("fast");
-                    $('#form-login').fadeIn("slow");
-                } else {
-                    $('#message2').html(data.message);
-                }
-            }).fail(function () {
-                $('body').html("Erreur critique");
-            });
-            return false;
-        })
-    })
-})();
+}) ();
