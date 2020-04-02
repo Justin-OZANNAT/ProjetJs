@@ -12,7 +12,7 @@ echo 'Ton username est : ' . htmlspecialchars($username) . "\n" . 'Ton password 
 $message = 'Connecté';
 try {
     // On se connecte à MySQL
-    $bdd = new PDO('mysql:host=mysql-justin-ozannat.alwaysdata.net;dbname=justin-ozannat_bd;charset=utf8', '202756', 'Richard2001!');
+    $bdd = new PDO('mysql:host=mysql-justin-ozannat.alwaysdata.net;dbname=justin-ozannat_bd;charset=utf8', '202756', 'XXXXXX');
 } catch (Exception $e) {
     // En cas d'erreur, on affiche un message et on arrête tout
     die('Erreur : ' . $e->getMessage());
